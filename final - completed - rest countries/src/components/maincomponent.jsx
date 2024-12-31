@@ -1,6 +1,6 @@
 import React from "react";
-import App from "./App";
-import { useDarkMode } from "./context";
+import App from "../App";
+import { useDarkMode } from "../context/context";
 function MainComponent() {
   const { isDarkMode } = useDarkMode();
   return (

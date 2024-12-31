@@ -1,5 +1,5 @@
 import React from "react";
-import { useDarkMode } from "./context";
+import { useDarkMode } from "../context/context";
 
 
 const Dropdown = ({ id, value, onChange, options, disabled, placeholder }) => {

@@ -1,11 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
-// import ToggleComponent from "./header";
+
 import { FaArrowLeft } from "react-icons/fa";
-import Toggle from "./toggle";
-import { useDarkMode } from "./context";
-// const ToggleSection = () => {
-//   return <ToggleComponent />;
-// };
+import Toggle from "../components/toggle";
+import { useDarkMode } from "../context/context";
+
 
 const BackButton = ({ navigate }) => {
   const { isDarkMode } = useDarkMode();

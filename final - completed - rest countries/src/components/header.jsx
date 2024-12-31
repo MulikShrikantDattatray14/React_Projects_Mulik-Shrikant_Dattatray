@@ -1,7 +1,7 @@
 
 import React from "react";
 import Toggle from "./toggle";
-import { useDarkMode } from "./context";
+import { useDarkMode } from "../context/context";
 
 const Header = () => {
   const { isDarkMode } = useDarkMode();
