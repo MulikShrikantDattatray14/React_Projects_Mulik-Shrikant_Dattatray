@@ -38,12 +38,19 @@ const ResultSection = ({ countries }) => {
   return <Result countries={countries} />;
 };
 
-const LoadingState = () => {
-  return <p className="text-center">Loading...</p>;
+const LoadingState = ({isDarkMode}) => {
+  return (
+    <div 
+    className={isDarkMode ? "bg-gray-800 text-white flex justify-center items-center min-h-screen " : "bg-white text-black flex justify-center items-center min-h-screen"}>
+    
+    
+    <div className="w-24 h-24 border-8 border-t-8 border-blue-500 border-solid rounded-full animate-spin-slow"></div>
+    </div>
+  );
 };
 
-const CountryListSection = ({ countries, loading }) => {
-  return loading ? <LoadingState /> : <CountryList countries={countries} />;
+const CountryListSection = ({ countries, loading ,isDarkMode }) => {
+  return loading ? <LoadingState isDarkMode={isDarkMode} /> : <CountryList countries={countries} />;
 };
 
 const HomePage = ({
@@ -87,7 +94,7 @@ const HomePage = ({
 
       <ResultSection countries={countries} />
 
-      <CountryListSection countries={countries} loading={loading} />
+      <CountryListSection countries={countries} loading={loading} isDarkMode={isDarkMode}/>
     </div>
   );
 };
