@@ -1,19 +1,25 @@
+
+
 import { useParams, useNavigate } from "react-router-dom";
 
 import { FaArrowLeft } from "react-icons/fa";
 import Toggle from "../components/toggle";
 import { useDarkMode } from "../context/context";
 
-
 const BackButton = ({ navigate }) => {
   const { isDarkMode } = useDarkMode();
-  return (<button
-    onClick={() => navigate("/")}
-   
-    className={isDarkMode ? 'flex items-center text-white bg-blue-500 hover:bg-blue-700 px-6 py-3 rounded-lg border-2  border-solid border-white' : 'flex items-center text-white bg-blue-500 hover:bg-blue-700 px-6 py-3 rounded-lg border-2  border-solid border-black'}
-  >
-    <FaArrowLeft className="mr-2" /> Back
-  </button>)
+  return (
+    <button
+      onClick={() => navigate("/")}
+      className={
+        isDarkMode
+          ? "flex items-center text-white bg-blue-500 hover:bg-blue-700 px-6 py-3 rounded-lg border-2  border-solid border-white"
+          : "flex items-center text-white bg-blue-500 hover:bg-blue-700 px-6 py-3 rounded-lg border-2  border-solid border-black"
+      }
+    >
+      <FaArrowLeft className="mr-2" /> Back
+    </button>
+  );
 };
 
 const CountryFlag = ({ flagUrl, countryName, country }) => {
@@ -29,8 +35,11 @@ const CountryFlag = ({ flagUrl, countryName, country }) => {
       <img
         src={flagUrl}
         alt={`Flag of ${countryName}`}
-        
-        className={isDarkMode ? 'w-[800px] h-[500px] object-cover rounded-lg border-8  border-solid border-white' : 'w-[800px] h-[500px] object-cover rounded-lg border-8  border-solid border-black'}
+        className={
+          isDarkMode
+            ? "w-[800px] h-[500px] object-cover rounded-lg border-8  border-solid border-white"
+            : "w-[800px] h-[500px] object-cover rounded-lg border-8  border-solid border-black"
+        }
       />
       <div className="flex flex-row gap-10 mt-12 mr-1">
         <p className="text-sm sm:text-md md:text-lg lg:text-xl text-gray-600">
@@ -189,9 +198,8 @@ function CountryDetail({ countries }) {
   }
 
   const borderingCountries = countries.filter((c) =>
-     //console.log((country.borders ?.includes(c.cca3) ) ? c.name.common : "no border")
-   country.borders?.includes(c.cca3)
-   
+    //console.log((country.borders ?.includes(c.cca3) ) ? c.name.common : "no border")
+    country.borders?.includes(c.cca3)
   );
 
   return (
@@ -202,7 +210,6 @@ function CountryDetail({ countries }) {
           : "bg-white text-black p-12 space-y-8"
       }
     >
-      
       <div className="flex items-center justify-between w-full sm:flex-row flex-col">
         <div className="flex sm:flex-row flex-col items-center justify-between w-full">
           <BackButton navigate={navigate} />
@@ -224,7 +231,6 @@ function CountryDetail({ countries }) {
           flagUrl={country.flags?.png}
           countryName={country.name?.common}
           country={country}
-         
         />
         <div>
           <CountryDetails country={country} isDarkMode={isDarkMode} />

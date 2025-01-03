@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { DarkModeProvider,useDarkMode } from '../context/context';
+import { useDarkMode } from '../context/context';
 import { FaSun, FaMoon } from 'react-icons/fa'; 
 
 

@@ -1,3 +1,4 @@
+
 import { useDarkMode } from "../context/context";
 
 const SearchFilter = ({ searchQuery, setSearchQuery }) => {
